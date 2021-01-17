@@ -1,0 +1,57 @@
+[
+{
+  "Id":1,
+  "SellRent":2,
+  "Name":"My House",
+  "Type":"House",
+  "Price":3000,
+  "Image":"pro-1"
+},
+{
+"Id":2,
+"SellRent":2,
+"Name":"Your Apartment",
+"Type":"Apartment",
+"Price":2500,
+"Image":"prop-2"
+},
+{
+"Id":3,
+"SellRent":2,
+"Name":"Martha Villa",
+"Type":"Villa",
+"Price":2000,
+"Image":"pro-3"
+},
+{
+"Id":4,
+"SellRent":1,
+"Name":"Juan House",
+"Type":"Flat",
+"Price":2500,
+"Image":"pro-4"
+},
+{
+"Id":5,
+"SellRent":1,
+"Name":"My House",
+"Type":"House",
+"Price":2000,
+"Image":"pro-5"
+},
+{
+"Id":6,
+"SellRent":1,
+"Name":"My House",
+"Type":"House",
+"Price":2000,
+"Image":"pro-6"
+},
+{
+  "Id":7,
+  "SellRent":1,
+  "Name":"Her Villa",
+  "Type":"Villa",
+  "Price":2000
+}
+]

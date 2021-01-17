@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Property } from '../model/property';
+import { HousingService } from '../services/housing.service';
 
 @Component({
   selector: 'app-property-list',
@@ -8,44 +10,27 @@ import { Property } from '../model/property';
 })
 export class PropertyListComponent implements OnInit {
 
-  Properties: Array<any> = [ {
-    "Id":1,
-    "Name":"My House",
-    "Type":"House",
-    "Price":1000
- },
- {
-  "Id":1,
-  "Name":"Your Apartment",
-  "Type":"Apartment",
-  "Price":2000
-},
-{
-  "Id":1,
-  "Name":"Martha Villa",
-  "Type":"Villa",
-  "Price":2000
-},
-{
-  "Id":1,
-  "Name":"Juan House",
-  "Type":"House",
-  "Price":2500
-}, {
-  "Id":1,
-  "Name":"My House",
-  "Type":"House",
-  "Price":2000
-}, {
-  "Id":1,
-  "Name":"My House",
-  "Type":"House",
-  "Price":2000
-}
-];
-  constructor() { }
+  SellRent:number=1;
+  Properties: Array<Property>;
+
+  constructor(private activeRouter:ActivatedRoute,
+              private housingService: HousingService) { }
 
   ngOnInit(): void {
+    this.getProperties();
+  }
+  private getProperties(){
+
+    if (this.activeRouter.snapshot.url.toString()) {
+      this.SellRent= 2; //Means we are on rent-property URL else we are on base URL.
+    }
+
+    this.housingService.getAllProperties(this.SellRent).subscribe(data =>
+      {
+        this.Properties= data;
+      },error => {
+        console.log(error);
+      });
   }
 
 }
