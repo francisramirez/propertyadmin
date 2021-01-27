@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 /*declarations*/
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +35,9 @@ import { RegisterComponent } from './user/register/register.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot()
     ],
   providers: [],
   bootstrap: [AppComponent]

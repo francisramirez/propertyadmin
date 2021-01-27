@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Property } from '../model/property';
 import { HousingService } from '../services/housing.service';
 
@@ -14,10 +14,17 @@ export class PropertyListComponent implements OnInit {
   Properties: Array<Property>;
 
   constructor(private activeRouter:ActivatedRoute,
-              private housingService: HousingService) { }
+              private housingService: HousingService,
+              private router:Router) { }
 
   ngOnInit(): void {
-    this.getProperties();
+    if (localStorage.getItem('token')) {
+      this.getProperties();
+    }
+    else{
+       this.router.navigate(['user/login']);
+    }
+
   }
   private getProperties(){
 
