@@ -4,5 +4,6 @@ export interface Property {
   Name:string,
   Type:string,
   Price:number,
-  Image?:string
+  Image?:string,
+  furnishingtype:string
 }
